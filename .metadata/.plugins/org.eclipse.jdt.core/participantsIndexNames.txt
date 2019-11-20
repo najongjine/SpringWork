@@ -1,6 +1,8 @@
 INDEX VERSION 1.131
 C:\BizWork\SpringWork\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2517786776.index
 \JSP02_Hello\src
+C:\BizWork\SpringWork\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1733029604.index
+\SpMVC_03_Student\src\main\java
 C:\BizWork\SpringWork\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1584514093.index
 \SPMVC_01_Student\src\main\java
 C:\BizWork\SpringWork\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1667110497.index
