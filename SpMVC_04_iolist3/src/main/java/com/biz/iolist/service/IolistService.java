@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import com.biz.iolist.domain.IolistDTO;
 import com.biz.iolist.domain.IolistVO;
 import com.biz.iolist.persistence.IolistDao;
-import com.biz.iolist.persistence.ioDao;
 
 @Service
 public class IolistService {
