@@ -22,7 +22,7 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/")
 	public String home() {
-		return "redirect:/iolist/list";
+		return "redirect:/bloodtest/insert";
 	}
 	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)

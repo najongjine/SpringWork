@@ -12,8 +12,8 @@
 <bean id="ds" class="org.apache.commons.dbcp2.BasicDataSource">
 <property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
 <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-<property name="password" value="iouser"/>
-<property name="username" value="iouser"/>
+<property name="password" value="teamproject"/>
+<property name="username" value="teamproject"/>
 </bean>
 
 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.biz.iolist.persistence.BloodTestDao">
+
+	<insert id="insert" parameterType="BloodTestDTO">
+		insert into tbl_bloodtest(
+		BLD_SEQ,
+		BLD_NAME,
+		BLD_NORMALMIN,
+		BLD_NORMALMAX,
+		BLD_OVERNORMAL,
+		BLD_BELOWNORMAL
+		) values (
+		seq_bloodtest.nextval,
+		#{bld_name,jdbcType=VARCHAR},
+		#{bld_normalmin,jdbcType=VARCHAR},
+		#{bld_normalmax,jdbcType=VARCHAR},
+		#{bld_overnormal,jdbcType=VARCHAR},
+		#{bld_belownormal,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<update id="update" parameterType="BloodTestDTO">
+		update tbl_bloodtest set
+		BLD_NAME =#{bld_name},
+		BLD_NORMALMIN=#{bld_normalmin},
+		BLD_NORMALMAX
+		=#{bld_normalmax},
+		BLD_OVERNORMAL =#{bld_overnormal},
+		BLD_BELOWNORMAL
+		=#{bld_belownormal}
+		where BLD_SEQ=#{bld_seq}
+	</update>
+
+	<delete id="delete" parameterType="BloodTestDTO">
+		delete from tbl_bloodtest
+		where BLD_SEQ=#{bld_seq}
+	</delete>
+</mapper> 
