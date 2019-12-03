@@ -80,9 +80,7 @@ public class MemoController {
 	 * 단, 이기능을 효율적으로 사용하려면 jsp코드에 Spring-form tag로 input 를 코딩해야한다*/
 	@RequestMapping(value = "/insert",method=RequestMethod.POST)
 	public String insert(@ModelAttribute MemoDTO memoDTO, Model model, String search) {
-		log.debug("!!!seq: "+memoDTO.getM_seq());
-		log.debug("!!!date: "+memoDTO.getM_date());
-		log.debug("!!!text: "+memoDTO.getM_text());
+		log.debug("!!!memoDTO: "+memoDTO.toString());
 		int ret=mService.insert(memoDTO);
 		return "redirect:/memo/list";
 	}

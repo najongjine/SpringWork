@@ -1,0 +1,19 @@
+@charset "UTF-8";
+div#search{
+	display: flex;
+	margin: 10px;
+}
+div#search label{
+	height: 20px;
+}
+div#search input{
+	margin:20px;
+	height: 20px;
+}
+#rowHeader{
+	background-color: gray;
+}
+#btnInsert{
+	margin: 20px;
+	position: absolute;
+}
