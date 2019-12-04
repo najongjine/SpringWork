@@ -8,10 +8,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta charset="UTF-8">
 <title>view a data</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	var rootPath = "${pageContext.request.contextPath }"
+</script>
+<script src="${rootPath }/js/bld-view-1.0.js?ver=1"></script>
 </head>
 <body>
 	<table border="2">
-		<tr>
+		<tr >
 			<th>BLD_SEQ:</th>
 			<td>${bldDTO.bld_seq }</td>
 		</tr>
@@ -42,7 +48,7 @@
 		</tr>
 
 	</table>
-	<button id="btn-update">update</button>
-	<button id="btn-delete">delete</button>
+	<button id="btn-update" data-id="${bldDTO.bld_seq }">update</button>
+	<button id="btn-delete" data-id="${bldDTO.bld_seq }">delete</button>
 </body>
 </html>

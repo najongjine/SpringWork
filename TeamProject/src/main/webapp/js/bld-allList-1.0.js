@@ -8,9 +8,4 @@ $(function() {
 		 */
 		document.location.href = rootPath+"/bloodtest/view?id=" + id
 	})
-	$("#btn-update").click(function() {
-	})
-	$("#btn-delete").click(function() {
-		
-	})
 })

@@ -10,8 +10,10 @@ import javax.xml.ws.RequestWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.biz.iolist.domain.BloodTestDTO;
 import com.biz.iolist.service.BloodTestService;
@@ -20,11 +22,18 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RequestMapping(value = "/bloodtest")
+@SessionAttributes("bldDTO")
 @Controller
 public class BloodTestController {
 	@Autowired
 	BloodTestService bldService;
 
+	@ModelAttribute("bldDTO")
+	public BloodTestDTO makeBldDTO() {
+		BloodTestDTO bldDTO=new BloodTestDTO();
+		return  bldDTO;
+	}
+	
 	@RequestMapping(value = "/allList")
 	public String allList(Model model) {
 		List<BloodTestDTO> bldList = bldService.findAll();
@@ -34,7 +43,6 @@ public class BloodTestController {
 	
 	@RequestMapping(value = "/view")
 	public String view(String id,Model model) {
-		log.debug("view get called!!!");
 		BloodTestDTO bldDTO;
 		try {
 			long bld_seq=Long.valueOf(id);
@@ -44,7 +52,6 @@ public class BloodTestController {
 		} catch (Exception e) {
 			log.debug("exception occured!!!");
 		}
-		log.debug("!!! trying to open view page");
 		return "bloodtest/view";
 	}
 
@@ -55,29 +62,46 @@ public class BloodTestController {
 	}
 	
 	@RequestMapping(value = "/insert",method=RequestMethod.POST)
-	public String insert(BloodTestDTO bldDTO, Model model) {
+	public String insert(@ModelAttribute BloodTestDTO bldDTO, Model model) {
 		log.debug("insert post proceeded!!!");
 		int ret=bldService.insert(bldDTO);
 		log.debug("insert to DB proceeded!!!");
 		return "redirect:/bloodtest/allList";
 	}
 
-	@RequestMapping(value = "/update")
-	public String update(BloodTestDTO bldDTO, Model model) {
-		int ret=bldService.update(bldDTO);
+	@RequestMapping(value = "/update",method=RequestMethod.GET)
+	public String update(String id,@ModelAttribute BloodTestDTO bldDTO, Model model) {
+		log.debug("update get called!!!");
+		long bld_seq=0;
+		try {
+			bld_seq=Long.valueOf(id);
+		} catch (Exception e) {
+			log.debug("!!! exception in update get!!!");
+		}
+		log.debug("!!! bld_seq: "+bld_seq);
+		bldDTO=bldService.findBySeq(bld_seq);
+		model.addAttribute("bldDTO", bldDTO);
+		log.debug("!!!bldDTO: "+bldDTO.toString());
 		return "bloodtest/update";
+	}
+	
+	@RequestMapping(value = "/update",method=RequestMethod.POST)
+	public String update(@ModelAttribute BloodTestDTO bldDTO, Model model) {
+		log.debug("update post called!!!");
+		int ret=bldService.update(bldDTO);
+		return "redirect:/bloodtest/allList";
 	}
 
 	@RequestMapping(value = "/delete")
-	public String delete(BloodTestDTO bldDTO, Model model, String strSeq) {
+	public String delete(BloodTestDTO bldDTO, Model model, String id) {
 		long bld_seq=0;
 		try {
-			bld_seq = Long.valueOf(strSeq);
+			bld_seq = Long.valueOf(id);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		bldService.delete(bld_seq);
-		return "bloodtest/allList";
+		int ret=bldService.delete(bld_seq);
+		return "redirect:/bloodtest/allList";
 	}
 
 }

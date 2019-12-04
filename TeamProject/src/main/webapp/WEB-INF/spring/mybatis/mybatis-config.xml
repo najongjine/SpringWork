@@ -21,6 +21,9 @@
 		<typeAlias 
 			type="com.biz.iolist.domain.BloodTestDTO" 
 			alias="BloodTestDTO"/>
+		<typeAlias 
+			type="com.biz.iolist.domain.LungDTO" 
+			alias="LungDTO"/>
 	</typeAliases>
 
 
