@@ -1,5 +1,8 @@
 package com.biz.iolist.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,6 +20,6 @@ public class LungDTO {
 	private long lung_seq	;//number
 	private String lung_imgurl	;//nvarchar2(1000 char)
 	private String lung_name	;//nvarchar2(1000 char)
-	private String lung_explanation;//	nvarchar2(1000 char)
-	private String lung_tag;
+	private String lung_explcode	;//nvarchar2(1000 char)
+	private List<LungExplDTO> explList=new ArrayList<LungExplDTO>();
 }

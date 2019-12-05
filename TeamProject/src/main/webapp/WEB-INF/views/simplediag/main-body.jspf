@@ -16,7 +16,7 @@
 <map name="image-map">
     <area target="" alt="trachea" title="trachea" href="naver.com" coords="51,232,179,269" shape="rect">
     <area target="" alt="esopagus" title="esopagus" href="###" coords="16,282,186,320" shape="rect">
-    <area target="" alt="lung" title="lung" href="${rootPath }/simplediag/lung" coords="101,330,185,372" shape="rect">
+    <area target="" alt="lung" title="lung" href="${rootPath }/simplediag/lung/list" coords="101,330,185,372" shape="rect">
     <area target="" alt="heart" title="heart" href="###" coords="274,610,380,654" shape="rect">
     <area target="" alt="liver" title="liver" href="###" coords="416,477,486,514" shape="rect">
     <area target="" alt="stomach" title="stomach" href="###" coords="328,105,469,144" shape="rect">
