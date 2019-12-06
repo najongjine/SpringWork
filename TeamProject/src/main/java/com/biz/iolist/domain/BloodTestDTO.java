@@ -20,4 +20,7 @@ public class BloodTestDTO {
 	private int bld_normalmax	;//number
 	private String bld_overnormal	;//nvarchar2(1000 char)
 	private String bld_belownormal	;//nvarchar2(1000 char)
+	private String bld_name_kor;
+	private int value;
+	private String currentStatus;
 }

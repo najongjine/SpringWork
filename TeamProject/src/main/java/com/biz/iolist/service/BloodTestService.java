@@ -2,6 +2,8 @@ package com.biz.iolist.service;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,5 +44,26 @@ public class BloodTestService {
 	public int delete(long bld_seq) {
 		int ret=bldDao.delete(bld_seq);
 		return ret;
+	}
+	public List<BloodTestDTO> findByNameAndValue(@Valid BloodTestDTO bldDTO) {
+		String bld_name=bldDTO.getBld_name();
+		int inputtedValue=bldDTO.getValue();
+		List<BloodTestDTO> bldList=bldDao.findByName(bld_name);
+		bldList.get(0).setValue(inputtedValue);
+		
+		/*
+		 * result of findByName is single object. Not Multiple.
+		 * But because of alrdy made sql and other methods, just using List than single DTO.
+		 */
+		if(bldList.get(0).getBld_normalmin()>inputtedValue) {
+			bldDTO.setCurrentStatus(bldList.get(0).getBld_belownormal());
+		}
+		else if(bldList.get(0).getBld_normalmax()<inputtedValue) {
+			bldDTO.setCurrentStatus(bldList.get(0).getBld_overnormal());
+		}
+		else {
+			bldDTO.setCurrentStatus("정상 수치입니다");
+		}
+		return bldList;
 	}
 }

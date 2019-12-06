@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <c:set var="rootPath" value="${pageContext.request.contextPath}" />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +12,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+<form:form action="${rootPath }/bloodtest/findByNameAndValue" modelAttribute="bldDTO">
 <div id="search">
-<label>검사명: </label><input name="bld_name">
-<label>수치: </label><input name="value">
+<p>현재 페이지에서 Ctrl+F 로 검색하셔도 좋습니다</p>
+<label>검사명: </label><form:input path="bld_name"/>
+<label>수치: </label><form:input path="value"/>
+<button>검색</button>
+</form:form>
 </div>
 <br/>
 <br/>

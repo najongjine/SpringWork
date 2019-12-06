@@ -1,11 +1,8 @@
 package com.biz.iolist.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
-import javax.xml.ws.RequestWrapper;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,6 +36,14 @@ public class BloodTestController {
 		List<BloodTestDTO> bldList = bldService.findAll();
 		model.addAttribute("BLDLIST", bldList);
 		return "bloodtest/allList";
+	}
+	
+	@RequestMapping(value = "/findByNameAndValue",method=RequestMethod.POST)
+	public String allList(@Valid @ModelAttribute("bldDTO") BloodTestDTO bldDTO, Model model) {
+		List<BloodTestDTO> bldList = bldService.findByNameAndValue(bldDTO);
+		bldDTO=bldList.get(0);
+		model.addAttribute("bldDTO", bldDTO);
+		return "bloodtest/findByNameAndValue";
 	}
 	
 	@RequestMapping(value = "/view")

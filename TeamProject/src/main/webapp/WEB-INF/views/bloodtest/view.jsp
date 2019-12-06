@@ -26,6 +26,11 @@
 			<th>항목명:</th>
 			<td>${bldDTO.bld_name }</td>
 		</tr>
+		
+		<tr>
+			<th>Name in Kor:</th>
+			<td>${bldDTO.bld_name_kor }</td>
+		</tr>
 
 		<tr>
 			<th>최소수치:</th>
