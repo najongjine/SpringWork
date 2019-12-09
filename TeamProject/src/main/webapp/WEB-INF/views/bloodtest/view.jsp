@@ -13,47 +13,11 @@
 <script>
 	var rootPath = "${pageContext.request.contextPath }"
 </script>
-<script src="${rootPath }/js/bld-view-1.0.js?ver=1"></script>
+<script src="${rootPath }/js/bld-view-1.0.js?ver=2"></script>
+<link rel="stylesheet" type="text/css" href="${rootPath }/css/bloodtest/view.css?ver=1">
 </head>
 <body>
-	<table border="2">
-		<tr >
-			<th>BLD_SEQ:</th>
-			<td>${bldDTO.bld_seq }</td>
-		</tr>
-
-		<tr>
-			<th>항목명:</th>
-			<td>${bldDTO.bld_name }</td>
-		</tr>
-		
-		<tr>
-			<th>Name in Kor:</th>
-			<td>${bldDTO.bld_name_kor }</td>
-		</tr>
-
-		<tr>
-			<th>최소수치:</th>
-			<td>${bldDTO.bld_normalmin }</td>
-		</tr>
-
-		<tr>
-			<th>최대수치:</th>
-			<td>${bldDTO.bld_normalmax }</td>
-		</tr>
-
-		<tr>
-			<th>최소수치 이하시 증상:</th>
-			<td>${bldDTO.bld_overnormal }</td>
-		</tr>
-
-		<tr>
-			<th>최대수치 이상시 증상:</th>
-			<td>${bldDTO.bld_belownormal }</td>
-		</tr>
-
-	</table>
-	<button id="btn-update" data-id="${bldDTO.bld_seq }">update</button>
-	<button id="btn-delete" data-id="${bldDTO.bld_seq }">delete</button>
+<%@ include file="/WEB-INF/views/bloodtest/view-body.jspf" %>
+	
 </body>
 </html>

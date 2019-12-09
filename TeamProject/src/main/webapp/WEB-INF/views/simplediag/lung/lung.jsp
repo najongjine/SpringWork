@@ -10,12 +10,11 @@
 <title>□□□ lung page □□□</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-<script src=""></script>
+<script src="${rootPath}/js/simplediag/lung/simplediag-lung-list.js"></script>
 <script>
 var rootPath="${pageContext.request.contextPath}"
 </script>
-<link rel="stylesheet" href="">
+<link rel="stylesheet" type="text/css" href="${rootPath }/css/simplediag/lung/lunglist.css">
 </head>
 <body>
 <%@ include file="/WEB-INF/views/simplediag/lung/lung-body.jspf" %>

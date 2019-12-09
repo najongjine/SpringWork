@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.biz.iolist.persistence.DeptDao">
+<mapper namespace="com.biz.pet.persistence.DeptDao">
 	<select id="selectAll" resultType="DeptDTO">
 		select * from tbl_dept order
 		by d_name, d_ceo

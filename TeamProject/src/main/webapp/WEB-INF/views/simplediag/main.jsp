@@ -13,10 +13,8 @@
 <script>
 var rootPath="${pageContext.request.contextPath }"
 </script>
-<script src="${rootPath }/js/simplediag-main.js?ver=1"></script>
-<!--
- <link rel="stylesheet" type="text/css" href="${rootPath }/css/simplediagMain.css">
- --> 
+<script src="${rootPath }/js/simplediag-main-1.0.js?ver=2"></script>
+ <link rel="stylesheet" type="text/css" href="${rootPath }/css/simplediag/simplediagMain.css?ver=2">
 </head>
 <body>
 <%@ include file="/WEB-INF/views/simplediag/main-body.jspf" %>

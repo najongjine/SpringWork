@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.biz.iolist.persistence.LungExplDao">
+<mapper namespace="com.biz.pet.persistence.LungExplDao">
 	<select id="findAll" resultType="LungExplDTO">
 		select * from tbl_lungexpl order
 		by lung_name

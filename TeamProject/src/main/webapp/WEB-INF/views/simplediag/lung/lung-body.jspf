@@ -24,7 +24,11 @@
 					<ul>
 					<c:forEach items="${dto.explList }" var="exp">
 					<li>${exp.lung_e_expl }</li>
+					<br/>
 					</c:forEach>
+					<br/>
+					<br/>
+					<br/>
 					</ul>
 				</c:forEach>
 			</c:otherwise>

@@ -6,19 +6,19 @@
 <configuration>
 
 	<typeAliases>
-		<typeAlias type="com.biz.iolist.domain.DeptDTO"
+		<typeAlias type="com.biz.pet.domain.DeptDTO"
 			alias="DeptDTO" />
-		<typeAlias type="com.biz.iolist.domain.ProductDTO"
+		<typeAlias type="com.biz.pet.domain.ProductDTO"
 			alias="ProductDTO" />
-		<typeAlias type="com.biz.iolist.domain.IolistVO"
+		<typeAlias type="com.biz.pet.domain.IolistVO"
 			alias="IolistVO" />
-		<typeAlias type="com.biz.iolist.domain.IolistDTO"
+		<typeAlias type="com.biz.pet.domain.IolistDTO"
 			alias="IolistDTO" />
-		<typeAlias type="com.biz.iolist.domain.BloodTestDTO"
+		<typeAlias type="com.biz.pet.domain.BloodTestDTO"
 			alias="BloodTestDTO" />
-		<typeAlias type="com.biz.iolist.domain.LungDTO"
+		<typeAlias type="com.biz.pet.domain.LungDTO"
 			alias="LungDTO" />
-		<typeAlias type="com.biz.iolist.domain.LungExplDTO"
+		<typeAlias type="com.biz.pet.domain.LungExplDTO"
 			alias="LungExplDTO" />
 
 	</typeAliases>

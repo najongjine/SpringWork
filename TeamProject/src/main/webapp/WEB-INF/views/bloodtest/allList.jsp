@@ -13,11 +13,11 @@
 <script>
 	var rootPath = "${pageContext.request.contextPath }"
 </script>
-<script src="${rootPath }/js/bld-allList-1.0.js?ver=2"></script>
-<link rel="stylesheet" type="text/css" href="${rootPath }/css/bld.css?ver=1">
+<script src="${rootPath }/js/bld-allList-1.0.js?ver=1"></script>
+<link rel="stylesheet" type="text/css" href="${rootPath }/css/bloodtest/allList.css?ver=2">
 </head>
 <body>
 <%@ include file="/WEB-INF/views/bloodtest/allList-body.jspf" %>
-<a href="${rootPath }/bloodtest/insert"><button id="btnInsert">새로등록</button></a>
+
 </body>
 </html>

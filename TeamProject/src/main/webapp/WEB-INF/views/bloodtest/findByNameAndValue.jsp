@@ -13,26 +13,9 @@
 <script>
 	var rootPath = "${pageContext.request.contextPath }"
 </script>
-<script src=""></script>
+<script src="${rootPath }/js/bld-findByNameAndValue.js"></script>
 </head>
 <body>
-	<table border="2">
-		<tr>
-			<th>항목명:</th>
-			<td>${bldDTO.bld_name }</td>
-		</tr>
-		
-		<tr>
-			<th>Name in Kor:</th>
-			<td>${bldDTO.bld_name_kor }</td>
-		</tr>
-
-		<tr>
-			<th>입력한수치: ${bldDTO.value }</th>
-			<td>${bldDTO.currentStatus }</td>
-		</tr>
-
-
-	</table>
+	<%@ include file="/WEB-INF/views/bloodtest/findByNameAndValue-body.jspf" %>
 </body>
 </html>
