@@ -9,5 +9,7 @@ import lombok.Getter;
 public interface LungDao {
 
 	public List<LungDTO> findAll();
+
+	public LungDTO findBySeq(long lung_seq);
 	
 }

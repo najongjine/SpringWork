@@ -26,6 +26,7 @@
 					<li>${exp.lung_e_expl }</li>
 					<br/>
 					</c:forEach>
+					<button><a href="${rootPath }/simplediag/lung/alter?strSeq=${dto.lung_seq}">수정</a></button>
 					<br/>
 					<br/>
 					<br/>

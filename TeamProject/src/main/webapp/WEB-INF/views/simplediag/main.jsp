@@ -13,8 +13,10 @@
 <script>
 var rootPath="${pageContext.request.contextPath }"
 </script>
-<script src="${rootPath }/js/simplediag-main-1.0.js?ver=2"></script>
- <link rel="stylesheet" type="text/css" href="${rootPath }/css/simplediag/simplediagMain.css?ver=2">
+<script src="${rootPath }/js/simplediag/jquery.maphilight.min.js?ver=1"></script>
+<script src="${rootPath }/js/simplediag/simplediag-main-1.0.js?ver=3"></script>
+
+ <link rel="stylesheet" type="text/css" href="${rootPath }/css/simplediag/simplediagMain.css?ver=4">
 </head>
 <body>
 <%@ include file="/WEB-INF/views/simplediag/main-body.jspf" %>

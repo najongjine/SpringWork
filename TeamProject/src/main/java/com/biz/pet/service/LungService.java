@@ -42,4 +42,13 @@ public class LungService {
 		}
 		return lungList;
 	}
+	public LungDTO findBySeq(long lung_seq) {
+		LungDTO lungDTO=lungDao.findBySeq(lung_seq);
+		String lung_e_code=lungDTO.getLung_explcode();
+		List<LungExplDTO> leList=leDao.findByLECODE(lung_e_code);
+		for(LungExplDTO leDTO: leList) {
+			lungDTO.getExplList().add(leDTO);
+		}
+		return null;
+	}
 }

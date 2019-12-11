@@ -21,4 +21,6 @@ $(function() {
 			i = 0;
 		}
 	}, 50);
+	$('.map').maphilight()
 })
+

@@ -7,5 +7,9 @@
 	<select id="findAll" resultType="LungDTO">
 		select * from tbl_lung order by lung_name
 	</select>
+	<select id="findBySeq" resultType="LungDTO">
+		select * from tbl_lung
+		where lung_seq=#{lung_seq}
+	</select>
 
 </mapper> 
