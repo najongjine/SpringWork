@@ -13,7 +13,7 @@
 <script>
 	var rootPath = "${pageContext.request.contextPath }"
 </script>
-<script src="${rootPath }/js/bld-allList-1.0.js?ver=1"></script>
+<script src="${rootPath }/js/bld-allList-1.0.js?ver=4"></script>
 <link rel="stylesheet" type="text/css" href="${rootPath }/css/bloodtest/allList.css?ver=2">
 </head>
 <body>

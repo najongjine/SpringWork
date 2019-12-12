@@ -24,11 +24,11 @@ public class LungController {
 	@Autowired
 	LungService lungService;
 
-	@ModelAttribute("lungDTO")
-	public LungDTO makeLungDTO() {
-		LungDTO lungDTO=new LungDTO();
-		return lungDTO;
-	}
+//	@ModelAttribute("LungDTO")
+//	public LungDTO makeLungDTO() {
+//		LungDTO lungDTO=new LungDTO();
+//		return lungDTO;
+//	}
 
 	@RequestMapping(value = "/list")
 	public String lung(Model model) {
@@ -38,11 +38,15 @@ public class LungController {
 	}
 	
 	@RequestMapping(value = "alter")
-	public String alter(Model model, String strSeq) {
+	public String alter(@ModelAttribute LungDTO lungDTO, @ModelAttribute LungExplDTO leDTO,
+			Model model, String strSeq) {
 		long lung_seq=Long.valueOf(strSeq);
-		log.debug("!!!"+lung_seq);
-		LungDTO lungDTO=lungService.findBySeq(lung_seq);
+		lungDTO=lungService.findBySeq(lung_seq);
+		
+		List<LungExplDTO> leList=lungDTO.getExplList();
 		model.addAttribute("lungDTO",lungDTO);
+		model.addAttribute("leList", leList);
+		log.debug("!!!"+lungDTO.toString());
 		return "simplediag/lung/alter";
 	}
 }

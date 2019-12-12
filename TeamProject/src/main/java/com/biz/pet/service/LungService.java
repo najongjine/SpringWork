@@ -49,6 +49,7 @@ public class LungService {
 		for(LungExplDTO leDTO: leList) {
 			lungDTO.getExplList().add(leDTO);
 		}
-		return null;
+		log.debug("!!!service: "+lungDTO);
+		return lungDTO;
 	}
 }
