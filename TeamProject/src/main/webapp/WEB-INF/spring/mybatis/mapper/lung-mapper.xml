@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.biz.pet.persistence.LungDao">
+<mapper namespace="com.biz.pet.persistence.simplediag.lung.LungDao">
 	<select id="findAll" resultType="LungDTO">
 		select * from tbl_lung order by lung_name
 	</select>
@@ -11,5 +11,12 @@
 		select * from tbl_lung
 		where lung_seq=#{lung_seq}
 	</select>
-
+	<delete id="delete" parameterType="Long">
+	delete from tbl_lungexpl 
+	where LUNG_E_CODE=(select LUNG_EXPLCODE from tbl_lung where lung_seq=#{lung_seq})
+	
+	delete from tbl_lung
+	where lung_seq=#{lung_seq}
+	
+	</delete>
 </mapper> 

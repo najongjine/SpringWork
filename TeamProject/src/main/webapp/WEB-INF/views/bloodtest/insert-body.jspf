@@ -21,9 +21,9 @@
 			최대수치: </label><input name="bld_normalmax" id="bld_normalmax"
 			value="${bldDTO.bld_normalmax}" type="number"> <label>정상범위
 			미만증상: </label><input name="bld_belownormal" id="bld_belownormal"
-			value="${bldDTO.bld_belownormal}" type="number"> <label>정상범위
+			value="${bldDTO.bld_belownormal}" type="text"> <label>정상범위
 			초과증상: </label><input name="bld_overnormal" id="bld_overnormal"
-			value="${bldDTO.bld_overnormal}" type="number">
+			value="${bldDTO.bld_overnormal}" type="text">
 
 		<button>submit</button>
 	</form>

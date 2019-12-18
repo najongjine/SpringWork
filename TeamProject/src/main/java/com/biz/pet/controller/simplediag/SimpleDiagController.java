@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.biz.pet.domain.LungDTO;
-import com.biz.pet.persistence.LungDao;
-import com.biz.pet.service.LungService;
+import com.biz.pet.domain.simplediag.lung.LungDTO;
+import com.biz.pet.persistence.simplediag.lung.LungDao;
+import com.biz.pet.service.simplediag.lung.LungService;
 
 import lombok.extern.slf4j.Slf4j;
 

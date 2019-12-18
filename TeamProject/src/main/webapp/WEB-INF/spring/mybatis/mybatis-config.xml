@@ -14,11 +14,11 @@
 			alias="IolistVO" />
 		<typeAlias type="com.biz.pet.domain.IolistDTO"
 			alias="IolistDTO" />
-		<typeAlias type="com.biz.pet.domain.BloodTestDTO"
+		<typeAlias type="com.biz.pet.domain.bloodtest.BloodTestDTO"
 			alias="BloodTestDTO" />
-		<typeAlias type="com.biz.pet.domain.LungDTO"
+		<typeAlias type="com.biz.pet.domain.simplediag.lung.LungDTO"
 			alias="LungDTO" />
-		<typeAlias type="com.biz.pet.domain.LungExplDTO"
+		<typeAlias type="com.biz.pet.domain.simplediag.lung.LungExplDTO"
 			alias="LungExplDTO" />
 
 	</typeAliases>

@@ -15,18 +15,26 @@
 <section>
 	<p>${lungDTO.lung_seq }</p>
 	<p><img src="${rootPath}/${lungDTO.lung_imgurl}" alt="img"></p>
-	<form:form modelAttribute="lungDTO" action="">
+	<form:form modelAttribute="lungDTO" action="" method="post">
 	<label>이미지 경로:</label><form:input path="lung_imgurl"/>
 	<label>병 이름:</label><form:input path="lung_name"/>
 	<button>수정</button>
+	<button><a href="${rootPath }/simplediag/lung/deleteAll?lung_seq=${lungDTO.lung_seq}">전체삭제</a></button>
 	</form:form>
 	<br/>
 	<p>병Code:${lungDTO.lung_explcode }</p>
 	
-	<form>
+	<form action="${rootPath }/simplediag/lung/alterExpl" method="post">
 	<c:forEach items="${leList}" var="expl">
-		<p><input name="${exp.lung_e_seq }" value="${expl.lung_e_expl }"></p>
+		<p><input name="currentStrExpl" value="${expl.lung_e_expl }"></p>
+		<input name="lung_e_code" value="${expl.lung_e_code}" type="hidden">
+		<input name="lung_e_name" value="${expl.lung_e_name}" type="hidden">
 	</c:forEach>
+	<div class="input_fields_wrap">
+    <button class="add_field_button">Add More Fields</button>
+    <div><input type="text" name="newStrExpl"></div>
+	</div>
+	<p><button>수정</button></p>
 	</form>
 </section>
 </body>

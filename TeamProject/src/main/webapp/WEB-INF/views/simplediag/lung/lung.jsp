@@ -18,5 +18,6 @@ var rootPath="${pageContext.request.contextPath}"
 </head>
 <body>
 <%@ include file="/WEB-INF/views/simplediag/lung/lung-body.jspf" %>
+<%@ include file="/WEB-INF/views/simplediag/lung/pagenation.jsp" %>
 </body>
 </html>
