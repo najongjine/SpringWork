@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.biz.pet.domain.PageDTO;
 import com.biz.pet.domain.simplediag.lung.LungDTO;
@@ -42,27 +43,44 @@ public class LungController {
 	@RequestMapping(value = "/alter",method=RequestMethod.GET)
 	public String alter(@ModelAttribute LungDTO lungDTO, @ModelAttribute LungExplDTO leDTO,
 			Model model, String strSeq) {
-		long lung_seq=Long.valueOf(strSeq);
-		lungDTO=lungService.findBySeq(lung_seq);
+		long lung_seq=-1;
+		List<LungExplDTO> leList=null;
+		log.debug("!!!alter get strseq: "+strSeq);
+		try {
+			lung_seq=Long.valueOf(strSeq);
+			log.debug("!!!alter get lung seq: "+lung_seq);
+			lungDTO=lungService.findBySeq(lung_seq);
+			leList=lungDTO.getExplList();
+		} catch (Exception e) {
+			lung_seq=-1;
+		}
 		
-		List<LungExplDTO> leList=lungDTO.getExplList();
+		
 		model.addAttribute("lungDTO",lungDTO);
 		model.addAttribute("leList", leList);
 		return "simplediag/lung/alter";
 	}
 	
-	@RequestMapping(value = "/alterExpl",method=RequestMethod.POST)
-	public String alter(@ModelAttribute LungDTO lungDTO, @ModelAttribute LungExplDTO leDTO,
-			String[] currentStrExpl,Model model , String[] newStrExpl,String[] lung_e_code, String[] lung_e_name) {
-		//lungecode가 배열인건 그냥 code값 넘길때 어쩔수없이 foreach문에 넣어야해서 여러개 넘어온거임 
-		try {
-			log.debug("!!! newstr: "+newStrExpl[0]);
-		} catch (Exception e) {
-			// TODO: handle exception
+	@RequestMapping(value = "/alter",method=RequestMethod.POST)
+	public String alter(@ModelAttribute("lungDTO") LungDTO lungDTO,// , @ModelAttribute LungExplDTO leDTO,
+			String[] currentStrExpl,Model model , String[] newStrExpl,String lung_e_code,
+			String lung_e_name, @RequestParam(value="u_file", required = false) MultipartFile u_file) {
+		
+		int ret=0;
+		
+		log.debug("!!! alter post lungseq: "+lungDTO.toString());
+		log.debug("!!! alter post lungseq: "+lungDTO.getLung_seq());
+		if(lungService.findBySeq(lungDTO.getLung_seq())==null) {
+			log.debug("!!! lung insert called: "+lungDTO.toString());
+			ret=lungService.insert(lungDTO);
 		}
 		
-		int ret=leService.update(currentStrExpl,lung_e_code[0]);
-		 ret=leService.insert(newStrExpl,lung_e_code[0],lung_e_name[0]);
+		if(lungService.findBySeq(lungDTO.getLung_seq())!=null) {
+			log.debug("!!! lung update called: "+lungDTO.toString());
+			ret=lungService.update(lungDTO);
+		}
+		ret=leService.update(currentStrExpl,lung_e_code);
+		 ret=leService.insert(newStrExpl,lung_e_code,lung_e_name);
 		return "redirect:/simplediag/lung/list";
 	}
 	

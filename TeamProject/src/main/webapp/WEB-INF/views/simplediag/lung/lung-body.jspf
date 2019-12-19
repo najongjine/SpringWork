@@ -35,5 +35,6 @@
 			</c:otherwise>
 		</c:choose>
 	</form:form>
+	<button><a href="${rootPath }/simplediag/lung/alter">추가</a></button>
 </body>
 </html>

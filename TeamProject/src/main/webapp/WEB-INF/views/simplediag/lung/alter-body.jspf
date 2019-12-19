@@ -14,28 +14,32 @@
 <body>
 <section>
 	<p>${lungDTO.lung_seq }</p>
-	<p><img src="${rootPath}/${lungDTO.lung_imgurl}" alt="img"></p>
-	<form:form modelAttribute="lungDTO" action="" method="post">
-	<label>이미지 경로:</label><form:input path="lung_imgurl"/>
+	<p><img src="${rootPath }/files/noimage.png" width="200px" id="p_image" ></p>
+	
+	<form:form modelAttribute="lungDTO"  method="post" enctype="multipart/form-data">
+	<form:input  type="readonly" path="lung_seq"/>
+	<form:input  type="hidden" path="lung_explcode"/>
+	<label></label><form:input path="lung_imgurl" type="hidden"/>
+	<label>이미지 파일 선택:</label><input type="file" name="u_file" id="u_file" accept="image/*">
+	<br/>
 	<label>병 이름:</label><form:input path="lung_name"/>
-	<button>수정</button>
+	<br/>
+	<input name="lung_e_code" value="${lungDTO.lung_explcode}" type="hidden">
+	<input name="lung_e_name" value="${lungDTO.lung_name}" type="hidden">
 	<button><a href="${rootPath }/simplediag/lung/deleteAll?lung_seq=${lungDTO.lung_seq}">전체삭제</a></button>
-	</form:form>
+	
 	<br/>
 	<p>병Code:${lungDTO.lung_explcode }</p>
 	
-	<form action="${rootPath }/simplediag/lung/alterExpl" method="post">
 	<c:forEach items="${leList}" var="expl">
 		<p><input name="currentStrExpl" value="${expl.lung_e_expl }"></p>
-		<input name="lung_e_code" value="${expl.lung_e_code}" type="hidden">
-		<input name="lung_e_name" value="${expl.lung_e_name}" type="hidden">
 	</c:forEach>
 	<div class="input_fields_wrap">
     <button class="add_field_button">Add More Fields</button>
     <div><input type="text" name="newStrExpl"></div>
 	</div>
 	<p><button>수정</button></p>
-	</form>
+	</form:form>
 </section>
 </body>
 </html>

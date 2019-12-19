@@ -12,6 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<section>
 	<div id="search">
 		<form:form action="${rootPath }/bloodtest/findByNameAndValue"
 			modelAttribute="bldDTO">
@@ -31,6 +32,7 @@
 		<tr id="rowHeader">
 			<th>BLD_SEQ</th>
 			<th>항목명</th>
+			<th>한글명</th>
 			<th>최소수치</th>
 			<th>최대수치</th>
 			<th>최소수치 이하시 증상</th>
@@ -43,6 +45,7 @@
 					<tr class="content-body" data-id="${dto.bld_seq}">
 						<td>${dto.bld_seq}</td>
 						<td>${dto.bld_name}</td>
+						<td>${dto.bld_name_kor}</td>
 						<td>${dto.bld_normalmin}</td>
 						<td>${dto.bld_normalmax}</td>
 						<td>${dto.bld_overnormal}</td>
@@ -54,5 +57,6 @@
 	</table>
 	<br/>
 	<a href="${rootPath }/bloodtest/insert"><button id="btnInsert">새로등록</button></a>
+	</section>
 </body>
 </html>

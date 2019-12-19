@@ -58,15 +58,37 @@ public class LungService {
 	}
 	public LungDTO findBySeq(long lung_seq) {
 		LungDTO lungDTO=lungDao.findBySeq(lung_seq);
-		String lung_e_code=lungDTO.getLung_explcode();
+		String lung_e_code="";
+		try {
+			lung_e_code=lungDTO.getLung_explcode();
+		} catch (Exception e) {
+			// TODO: handle exception
+			lung_e_code="-1";
+		}
 		List<LungExplDTO> leList=leDao.findByLECODE(lung_e_code);
 		for(LungExplDTO leDTO: leList) {
 			lungDTO.getExplList().add(leDTO);
 		}
-		log.debug("!!!service: "+lungDTO);
 		return lungDTO;
 	}
 	public int delete(long lung_seq) {
 		return lungDao.delete(lung_seq);
+	}
+	public int update(LungDTO lungDTO) {
+		// TODO Auto-generated method stub
+		return lungDao.update(lungDTO);
+	}
+	public int insert(LungDTO lungDTO) {
+		// TODO Auto-generated method stub
+		String maxLeCode=lungDao.selectMaxLECode();
+		log.debug("!!! maxlecode: "+maxLeCode);
+		String prefix=maxLeCode.substring(0,3);
+		int suffix=Integer.valueOf(maxLeCode.substring(3));
+		suffix++;
+		log.debug("!!! suffix: "+suffix);
+		String increLeCode=prefix+(String.format("%04d", suffix));
+		log.debug("!!! increLeCode: "+ increLeCode);
+		lungDTO.setLung_explcode(increLeCode);
+		return lungDao.insert(lungDTO);
 	}
 }

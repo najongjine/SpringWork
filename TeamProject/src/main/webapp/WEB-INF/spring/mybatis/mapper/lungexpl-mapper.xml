@@ -11,19 +11,19 @@
 	<select id="findByLECODE" resultType="LungExplDTO">
 		select * from
 		tbl_lungexpl
-		where LUNG_E_CODE=#{lung_e_code}
+		where LUNG_E_CODE=#{lung_e_code,jdbcType=VARCHAR}
 	</select>
 	<update id="update" parameterType="LungExplDTO">
 		update tbl_lungexpl set
 		LUNG_E_EXPL =#{lung_e_expl,jdbcType=VARCHAR},
 		LUNG_E_NAME =#{lung_e_name,jdbcType=VARCHAR}
 		where
-		LUNG_E_SEQ=#{lung_e_seq}
+		LUNG_E_SEQ=#{lung_e_seq,jdbcType=VARCHAR}
 	</update>
 	<delete id="delete" parameterType="LungExplDTO">
 		delete from tbl_lungexpl
 		where
-		LUNG_E_SEQ=#{lung_e_seq}
+		LUNG_E_SEQ=#{lung_e_seq,jdbcType=VARCHAR}
 	</delete>
 	<insert id="insert" parameterType="LungExplDTO">
 		insert into tbl_lungexpl (

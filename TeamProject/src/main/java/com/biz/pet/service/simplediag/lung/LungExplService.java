@@ -42,6 +42,7 @@ public class LungExplService {
 	public int insert(String[] newStrExpl, String lung_e_code,String lung_e_name) {
 		int ret=0;
 		LungExplDTO leDTO=null;
+		if(newStrExpl==null) return -1;
 		for(String s:newStrExpl) {
 			if(s.trim().length()<1) {
 				continue;

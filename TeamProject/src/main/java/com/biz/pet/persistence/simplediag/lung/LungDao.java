@@ -13,5 +13,11 @@ public interface LungDao {
 	public LungDTO findBySeq(long lung_seq);
 
 	public int delete(long lung_seq);
+
+	public int update(LungDTO lungDTO);
+
+	public int insert(LungDTO lungDTO);
+
+	public String selectMaxLECode();
 	
 }

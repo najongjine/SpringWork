@@ -17,6 +17,7 @@
 </bean>
 
 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+<property name="typeAliasesPackage" value="com.biz.product.domain"/>
 <property name="dataSource" ref="ds"/>
 <property name="configLocation" value="/WEB-INF/spring/mybatis/mybatis-config.xml"/>
 <property name="mapperLocations" value="/WEB-INF/spring/mybatis/mapper/*-mapper.xml"/>
