@@ -17,7 +17,7 @@
 			<c:otherwise>
 				<c:forEach items="${LUNG_LIST }" var="dto">
 					<p>
-						${dto.lung_seq}.&nbsp; <img src="${rootPath}/${dto.lung_imgurl}"
+						${dto.lung_seq}.&nbsp; <img src="${rootPath}/files/${dto.lung_imgurl}"
 							alt="${dto.lung_name }">
 					</p>
 					<h4>${dto.lung_name }</h4>

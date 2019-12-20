@@ -1,5 +1,7 @@
 @charset "UTF-8";
-
+*{
+	white-space: pre-line;
+}
 table {
 	margin: auto;
   border-collapse: collapse;

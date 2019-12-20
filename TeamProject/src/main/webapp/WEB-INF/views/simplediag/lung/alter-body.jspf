@@ -14,10 +14,10 @@
 <body>
 <section>
 	<p>${lungDTO.lung_seq }</p>
-	<p><img src="${rootPath }/files/noimage.png" width="200px" id="p_image" ></p>
+	<p><img src="${rootPath}/files/${lungDTO.lung_imgurl}" id="p_image" ></p>
 	
 	<form:form modelAttribute="lungDTO"  method="post" enctype="multipart/form-data">
-	<form:input  type="readonly" path="lung_seq"/>
+	<form:input  type="hidden" path="lung_seq"/>
 	<form:input  type="hidden" path="lung_explcode"/>
 	<label></label><form:input path="lung_imgurl" type="hidden"/>
 	<label>이미지 파일 선택:</label><input type="file" name="u_file" id="u_file" accept="image/*">

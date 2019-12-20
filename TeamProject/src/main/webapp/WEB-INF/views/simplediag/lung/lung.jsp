@@ -14,7 +14,7 @@
 <script>
 var rootPath="${pageContext.request.contextPath}"
 </script>
-<link rel="stylesheet" type="text/css" href="${rootPath }/css/simplediag/lung/lunglist.css">
+<link rel="stylesheet" type="text/css" href="${rootPath }/css/simplediag/lung/lunglist.css?ver=1">
 </head>
 <body>
 <%@ include file="/WEB-INF/views/simplediag/lung/lung-body.jspf" %>

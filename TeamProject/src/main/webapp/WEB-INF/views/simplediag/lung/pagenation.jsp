@@ -58,23 +58,23 @@
 	<article class="page-box">
 		<ul class="page-body">
 			<li class="page-item"><a
-				href="${rootPath }/search?cat=${cat }&search=${search }&currentPageNo=${PAGE.firstPageNo}"
+				href="${rootPath }/simplediag/lung/list?currentPageNo=${PAGE.firstPageNo}"
 				class="page-link">[처음]</a>
 				
 			<li class="page-item"><a
-				href="${rootPath }/search?cat=${cat }&search=${search }&currentPageNo=${PAGE.prePageNo}""
+				href="${rootPath }/simplediag/lung/list?currentPageNo=${PAGE.prePageNo}""
 				class="page-link">&lt;</a> 
 
 			<c:forEach begin="${PAGE.startPageNo }" end="${PAGE.endPageNo }" var="page">
 				<li class="page-item <c:if test="${page==currentPageNo }">active</c:if>">
-					<a href="${rootPath }/search?search=${search }&cat=${cat }&currentPageNo=${page}"
+					<a href="${rootPath }//simplediag/lung/list?currentPageNo=${page}"
 						class="page-link">${page }</a>
 			</c:forEach>
 			
 			<li class="page-item"><a
-				href="${rootPath }/search?cat=${cat }&search=${search }&currentPageNo=${PAGE.nextPageNo}" class="page-link">&gt;</a>
+				href="${rootPath }/simplediag/lung/list?currentPageNo=${PAGE.nextPageNo}" class="page-link">&gt;</a>
 			<li class="page-item"><a
-				href="${rootPath }/search?cat=${cat }&search=${search }&currentPageNo=${PAGE.finalPageNo}" class="page-link">[끝]</a>
+				href="${rootPath }/simplediag/lung/list?currentPageNo=${PAGE.finalPageNo}" class="page-link">[끝]</a>
 		</ul>
 	</article>
 </body>

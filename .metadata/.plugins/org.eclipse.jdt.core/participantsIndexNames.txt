@@ -97,6 +97,8 @@ C:\BizWork\SpringWork\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2728
 \SpMVC_05_Memo_join\src\main\java
 C:\BizWork\SpringWork\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\444793531.index
 \SpMVC_05_Memo_join3\src\main\java
+C:\BizWork\SpringWork\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3792372171.index
+\SpMVC_11_Product2V4\src\main\java
 C:\BizWork\SpringWork\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3415235371.index
 \SpMVC_07_DataGoKr2\src\main\java
 C:\BizWork\SpringWork\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\231426466.index
