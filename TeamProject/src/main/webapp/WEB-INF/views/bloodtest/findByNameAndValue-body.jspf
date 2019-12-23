@@ -10,6 +10,7 @@
 <title>view a data</title>
 </head>
 <body>
+<section class="container">
 	<table border="2">
 		<tr>
 			<th>항목명:</th>
@@ -25,8 +26,7 @@
 			<th>입력한수치: ${bldDTO.value }</th>
 			<td>${bldDTO.currentStatus }</td>
 		</tr>
-
-
 	</table>
+</section>
 </body>
 </html>

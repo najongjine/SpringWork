@@ -29,8 +29,10 @@
 		up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/css/**" location="/css/" />
+	<resources mapping="/include/**" location="/include/" />
 	<resources mapping="/js/**" location="/js/" />
 	<resources mapping="/img/**" location="/img/" />
+	<resources mapping="/images/**" location="/images/" />
 
 	<beans:bean id="multipartResolver" 
 	class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

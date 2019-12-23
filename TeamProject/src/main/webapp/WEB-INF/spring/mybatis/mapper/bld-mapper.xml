@@ -10,7 +10,7 @@
 
 	<select id="findByName" resultType="BloodTestDTO">
 		select * from tbl_bloodtest
-		where BLD_NAME like '%' || #{bld_name} || '%'
+		where upper(BLD_NAME) like '%' || upper(#{bld_name}) || '%'
 	</select>
 
 	<select id="findBySeq" resultType="BloodTestDTO">
@@ -22,6 +22,7 @@
 		insert into tbl_bloodtest(
 		BLD_SEQ,
 		BLD_NAME,
+		BLD_NAME_KOR,
 		BLD_NORMALMIN,
 		BLD_NORMALMAX,
 		BLD_OVERNORMAL,
@@ -29,6 +30,7 @@
 		) values (
 		seq_bloodtest.nextval,
 		#{bld_name,jdbcType=VARCHAR},
+		#{bld_name_kor,jdbcType=VARCHAR},
 		#{bld_normalmin,jdbcType=VARCHAR},
 		#{bld_normalmax,jdbcType=VARCHAR},
 		#{bld_overnormal,jdbcType=VARCHAR},
@@ -39,6 +41,7 @@
 	<update id="update" parameterType="BloodTestDTO">
 		update tbl_bloodtest set
 		BLD_NAME = #{bld_name},
+		BLD_NAME_KOR = #{bld_name_kor},
 		BLD_NORMALMIN =
 		#{bld_normalmin},
 		BLD_NORMALMAX =

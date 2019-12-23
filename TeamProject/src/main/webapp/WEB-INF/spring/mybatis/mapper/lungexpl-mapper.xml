@@ -25,6 +25,10 @@
 		where
 		LUNG_E_SEQ=#{lung_e_seq,jdbcType=VARCHAR}
 	</delete>
+	<delete id="deleteByLECode" parameterType="String">
+	delete from tbl_lungexpl
+	where lung_e_code=#{lung_e_code}
+	</delete>
 	<insert id="insert" parameterType="LungExplDTO">
 		insert into tbl_lungexpl (
 		LUNG_E_SEQ,

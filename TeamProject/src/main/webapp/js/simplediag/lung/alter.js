@@ -1,18 +1,16 @@
 $(function() {
 	
-	var cursorArray = [
-			'url("http://localhost:8080/iolist/css/doubleParrot(1).png"), auto',
-			'url("http://localhost:8080/iolist/css/doubleParrot(2).png"), auto',
-			'url("http://localhost:8080/iolist/css/doubleParrot(3).png"), auto',
-			,
-			'url("http://localhost:8080/iolist/css/doubleParrot(4).png"), auto',
-			,
-			'url("http://localhost:8080/iolist/css/doubleParrot(5).png"), auto',
-			'url("http://localhost:8080/iolist/css/doubleParrot(6).png"), auto',
-			'url("http://localhost:8080/iolist/css/doubleParrot(7).png"), auto',
-			'url("http://localhost:8080/iolist/css/doubleParrot(8).png"), auto',
-			'url("http://localhost:8080/iolist/css/doubleParrot(9).png"), auto',
-			'url("http://localhost:8080/iolist/css/doubleParrot(10).png"), auto' ];
+	var cursorArray = ['url("https://i.ibb.co/XZPK3gQ/double-Parrot-1.png"), auto',
+        'url("https://i.ibb.co/4FHw5CH/double-Parrot-2.png"), auto',
+       'url("https://i.ibb.co/qWfR4Rn/double-Parrot-3.png"), auto',,
+       'url("https://i.ibb.co/xsYfT9G/double-Parrot-4.png"), auto',,
+       'url("https://i.ibb.co/sPQWrHG/double-Parrot-5.png"), auto',
+       'url("https://i.ibb.co/KrtNp4c/double-Parrot-6.png"), auto',
+       'url("https://i.ibb.co/SXXRs6d/double-Parrot-7.png"), auto',
+       'url("https://i.ibb.co/Jx52qjG/double-Parrot-8.png"), auto',
+       'url("https://i.ibb.co/vd1b2d7/double-Parrot-9.png"), auto',
+       'url("https://i.ibb.co/qDjwBP8/double-Parrot-10.png"), auto'
+       ];
 	var i = 0
 	setInterval(function() {
 		i++
@@ -40,4 +38,5 @@ $(document).ready(function() {
 	$(wrapper).on("click",".remove_field", function(e){ //user click on remove text
 		e.preventDefault(); $(this).parent('div').remove(); x--;
 	})
+
 });

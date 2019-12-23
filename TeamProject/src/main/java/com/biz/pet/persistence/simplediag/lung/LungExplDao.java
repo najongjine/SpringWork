@@ -12,6 +12,7 @@ public interface LungExplDao {
 	public int update(LungExplDTO leDTO);
 
 	public int delete(LungExplDTO leDTO);
+	public int deleteByLECode(String lung_e_code);
 
 	public int insert(LungExplDTO leDTO);
 }

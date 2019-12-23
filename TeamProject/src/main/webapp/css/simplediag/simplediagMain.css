@@ -1,22 +1,4 @@
 @charset "UTF-8";
-
-p {
-	width: 100%;
-	margin: 0 auto;
-}
-
-img {
-
-	display: block;
-	margin: 0 auto;
-	background-color: red;
-}
-
-area {
-	background-color: blue;
-	color: rgba(63, 146, 191, 0.72);
-}
-
-h3 {
-
+h3{
+	text-align: center;
 }

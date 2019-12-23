@@ -11,14 +11,16 @@
 <title>□□□ My JSP Page □□□</title>
 </head>
 <body>
+<section class="container">
 	<form:form>
 		<c:choose>
 			<c:when test="${LUNG_LIST==NULL }"> 데이터가 없습니다.</c:when>
 			<c:otherwise>
 				<c:forEach items="${LUNG_LIST }" var="dto">
+				<article class="lung-list">
 					<p>
 						${dto.lung_seq}.&nbsp; <img src="${rootPath}/files/${dto.lung_imgurl}"
-							alt="${dto.lung_name }">
+							alt="${dto.lung_name }" width="300px">
 					</p>
 					<h4>${dto.lung_name }</h4>
 					<ul>
@@ -26,15 +28,19 @@
 					<li>${exp.lung_e_expl }</li>
 					<br/>
 					</c:forEach>
-					<button><a href="${rootPath }/simplediag/lung/alter?strSeq=${dto.lung_seq}">수정</a></button>
+					<button class="btn btn-info btn-outline-info">
+					<a href="${rootPath }/simplediag/lung/alter?strSeq=${dto.lung_seq}">수정</a>
+					</button>
 					<br/>
 					<br/>
 					<br/>
+				</article>
 					</ul>
 				</c:forEach>
 			</c:otherwise>
 		</c:choose>
 	</form:form>
-	<button><a href="${rootPath }/simplediag/lung/alter">추가</a></button>
+	<button class="btn btn-primary"><a href="${rootPath }/simplediag/lung/alter">추가</a></button>
+</section>
 </body>
 </html>

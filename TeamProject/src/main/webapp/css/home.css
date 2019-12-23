@@ -1,0 +1,279 @@
+@charset "UTF-8";
+/***** 공통 ******/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	width: 1200px;
+	display: flex;
+	flex-flow: column nowrap;
+	margin: 0 auto;
+}
+
+li {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+/***** header ******/
+header {
+	position: relative;
+	width: 100%;
+}
+
+header h3 a {
+	display: inline-block;
+	margin: 0 80px;
+	margin-top: 5px;
+}
+
+header h3 a img {
+	width: 25%;
+	height: 25%;
+}
+
+/***** header - search ******/
+fieldset {
+	border: none;
+}
+
+legend {
+	display: none;
+}
+
+#search-form {
+	display: flex;
+}
+
+#hd-search {
+	font-size: 1.1rem;
+	text-align: center;
+	width: 600px;
+	padding: 4px 20px;
+	position: absolute;
+	top: 51px;
+	right: 252px;
+}
+
+
+/***** nav ******/
+nav {
+	background-color: #7bc043;
+	width: 100%;
+	margin-top: 1px;
+}
+
+nav ul {
+	display: flex;
+}
+
+nav ul a {
+	text-align: center;
+	font-size: 1rem;
+	color: white;
+	display: inline-block;
+	padding: 10px 26px;
+}
+
+nav ul a:hover {
+	background-color: #14974b;
+	color: white;
+	font-weight: bold;
+}
+
+nav ul li:nth-child(6) {
+	margin-left: auto;
+}
+
+/***** main-banner ******/
+article {
+	position: relative;
+}
+
+article div {
+	position: absolute;
+	top: 85px;
+	right: 260px;
+}
+
+article img {
+	display: block;
+}
+
+article span {
+	font-size: 1rem;
+}
+
+article strong {
+	display: block;
+	font-size: 1.4rem;
+	padding: 6px 0;
+}
+
+article p {
+	display: block;
+	font-size: 0.8rem;
+	color: #3b3b3b;
+	padding: 1px 0;
+}
+
+#shop {
+	display: inline-block;
+	background-color: #424242;
+	color: white;
+	font-size: 0.7rem;
+	text-align: center;
+	padding: 7px 27px;
+	margin-top: 17px;
+}
+
+section {
+	position: relative;
+}
+
+
+
+#banner-two {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+/***** main-near ******/
+#hs-near {
+	width: 85%;
+	margin: 110px auto;
+}
+
+#hs-near h4 {
+	color: #34495e;
+	font-size: 1.9rem;
+	padding-bottom: 40px;
+}
+
+#hs-search {
+	position:relative;
+	display: flex;
+	width: 60%;
+	margin: 0 auto;
+}
+
+#dong-search {
+	font-size: 0.8rem;
+	text-align: center;
+	width: 526px;
+	padding: 4px 20px;
+}
+
+
+
+#btn-dong:hover {
+	background-color: #7bc043;
+}
+
+#hs-near-box {
+	display: flex;
+	margin-top: 30px;
+}
+
+#hs-info1 {
+	margin-left: 40px;
+}
+
+#hs-info2, #hs-info3 {
+	margin-left:auto;
+}
+
+#hs-near-box article a {
+	display: block;
+}
+
+#hs-near-box article li {
+	color: #3b3b3b;
+	font-size: 0.9rem;
+	padding: 1px 0;
+}
+
+#hs-near-box article li:nth-child(2) {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #34495e;
+}
+
+#hs-near-box article li:first-child {
+	position: relative;
+}
+
+#hs-near-box article li:first-child span {
+	display: block;
+	position: absolute;
+	top: 13px;
+	left: -40px;
+	width: 40%;
+	border-top: 3px solid #34495e;
+	color: #34495e;
+	font-size: 1.8rem;
+	font-weight: bold;
+	padding-left: 15px;
+}
+
+/***** footer ******/
+footer {
+	background-color: #7bc043;
+	position: relative;
+	margin-top: 40px;
+}
+
+footer h3 a {
+	display: inline-block;
+	margin: 30px 0;
+	margin-left: 40px;
+}
+
+footer h3 a img {
+	width: 20%;
+	height: 20%;
+}
+
+footer div {
+	position: absolute;
+	top: 47px;
+	left: 185px;
+	font-size: 1rem;
+	color: #333;
+}
+
+footer div ul {
+	display: flex;
+}
+
+footer div li a {
+	display: inline-block;
+	color: #333;
+}
+
+footer div li:nth-child(2) {
+	padding: 0 13px;
+}
+
+footer div ul li a:hover {
+	color: white;
+}
+
+footer div p {
+	padding: 3px 0;
+}
+address {
+	font-style: normal;
+}

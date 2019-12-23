@@ -72,6 +72,10 @@ public class LungService {
 		return lungDTO;
 	}
 	public int delete(long lung_seq) {
+		String lung_e_code="";
+		LungDTO lungDTO=lungDao.findBySeq(lung_seq);
+		lung_e_code=lungDTO.getLung_explcode();
+		leDao.deleteByLECode(lung_e_code);
 		return lungDao.delete(lung_seq);
 	}
 	public int update(LungDTO lungDTO) {

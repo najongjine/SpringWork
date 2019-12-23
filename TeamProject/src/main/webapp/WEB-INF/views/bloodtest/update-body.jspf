@@ -11,14 +11,16 @@
 <title>Insert title here</title>
 </head>
 <body>
+<section class="container">
 	<form:form modelAttribute="bldDTO">
-	<label>SEQ: </label><form:input path="bld_seq" readonly="true"/><br/>
-	<label>항목명: </label><form:input path="bld_name"/><br/>
-	<label>정상최소수치: </label><form:input path="bld_normalmin"/><br/>
-	<label>정상최대수치: </label><form:input path="bld_normalmax"/><br/>
-	<label>미만증상: </label><form:input path="bld_belownormal"/><br/>
-	<label>초과증상: </label><form:input path="bld_overnormal"/><br/>
-	<br/><form:button>수정</form:button><br/>
+	<label>SEQ: </label><form:input  class="form-control"  path="bld_seq" readonly="true"/><br/>
+	<label>항목명: </label><form:input   class="form-control" path="bld_name"/><br/>
+	<label>정상최소수치: </label><form:input  class="form-control"  path="bld_normalmin"/><br/>
+	<label>정상최대수치: </label><form:input  class="form-control"  path="bld_normalmax"/><br/>
+	<label>미만증상: </label><form:input  class="form-control"  path="bld_belownormal"/><br/>
+	<label>초과증상: </label><form:input  class="form-control"  path="bld_overnormal"/><br/>
+	<br/><form:button class="btn btn-primary">수정</form:button><br/>
 	</form:form>
+</section>
 </body>
 </html>

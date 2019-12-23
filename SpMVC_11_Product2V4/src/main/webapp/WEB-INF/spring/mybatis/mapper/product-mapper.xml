@@ -66,7 +66,7 @@
 		P_OPRICE=#{ p_oprice,jdbcType=VARCHAR},
 		P_VAT=#{ p_vat,jdbcType=VARCHAR},
 		P_FILE=#{p_file,jdbcType=VARCHAR}
-		where P_CODE=#{p_code}
+		where P_CODE=#{p_code,jdbcType=VARCHAR}
 	</update>
 
 </mapper>

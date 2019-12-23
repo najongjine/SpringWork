@@ -12,15 +12,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<section>
+	<section class="container">
 	<div id="search">
 		<form:form action="${rootPath }/bloodtest/findByNameAndValue"
 			modelAttribute="bldDTO">
 			<label>검사명: </label>
-			<form:input path="bld_name" />
+			<form:input path="bld_name" class="form-control"/>
 			<label>수치: </label>
-			<form:input path="value" />
-			<button>검색</button>
+			<form:input path="value" class="form-control"/>
+			<button class="btn btn-primary">검색</button>
 		</form:form>
 	</div>
 
@@ -28,7 +28,7 @@
 
 	<br />
 	<br />
-	<table>
+	<table class="table table-striped table-bordered table-hover">
 		<tr id="rowHeader">
 			<th>BLD_SEQ</th>
 			<th>항목명</th>
@@ -56,7 +56,8 @@
 		</c:choose>
 	</table>
 	<br/>
-	<a href="${rootPath }/bloodtest/insert"><button id="btnInsert">새로등록</button></a>
+	<button id="btnInsert" class="btn btn-info btn-outline-info">
+	<a href="${rootPath }/bloodtest/insert">새로등록</a></button>
 	</section>
 </body>
 </html>

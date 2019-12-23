@@ -37,10 +37,12 @@ public class BloodTestService {
 		return bldList;
 	}
 	public int insert(BloodTestDTO bldDTO) {
+		bldDTO.setBld_name(bldDTO.getBld_name().toUpperCase());
 		int ret=bldDao.insert(bldDTO);
 		return ret;
 	}
 	public int update(BloodTestDTO bldDTO) {
+		bldDTO.setBld_name(bldDTO.getBld_name().toUpperCase());
 		int ret=bldDao.update(bldDTO);
 		return ret;
 	}

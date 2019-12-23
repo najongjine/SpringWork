@@ -2,5 +2,7 @@
 <aop-reference-model>
 <aop-project name="SpMVC_03_Student3"/>
 <aop-project name="TeamProject"/>
+<aop-project name="SpMVC_11_Product2V2"/>
+<aop-project name="SpMVC_11_Product2V4"/>
 <aop-project name="SpMVC_05_Memo_join"/>
 </aop-reference-model>

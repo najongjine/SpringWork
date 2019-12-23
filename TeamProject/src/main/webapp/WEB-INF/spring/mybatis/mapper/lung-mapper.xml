@@ -42,11 +42,6 @@
 		lung_seq=#{lung_seq,jdbcType=VARCHAR}
 	</update>
 	<delete id="delete" parameterType="Long">
-		delete from tbl_lungexpl
-		where LUNG_E_CODE=(select LUNG_EXPLCODE from tbl_lung where
-		lung_seq=#{lung_seq,jdbcType=VARCHAR}
-		group by LUNG_EXPLCODE)
-
 		delete from tbl_lung
 		where lung_seq=#{lung_seq,jdbcType=VARCHAR}
 

@@ -1,0 +1,167 @@
+@charset "UTF-8";
+/***** nav ******/
+nav ul li:nth-child(5) a {
+	background-color: #14974b;
+	color: white;
+	font-weight: bold;
+}
+
+/***** #community-review ******/
+#community {
+	width: 85%;
+	margin: 90px auto;
+}
+
+#community-nav {
+	margin: 0 0 30px 70px;
+}
+
+#community-nav ul {
+	display: flex;
+}
+
+#community-nav ul li a {
+	display: block;
+	color: black;
+	font-size: 0.9rem;
+	text-align: center;
+	width: 100px;
+	padding: 5px 0;
+}
+
+#community-nav ul li:first-child a {
+	background-color: #e67e22;
+	color: white;
+}
+
+#community-nav ul li:first-child {
+	margin-right: 10px;
+}
+
+#community-nav ul li a:hover {
+	background-color: #e67e22;
+	color: white;
+}
+
+table {
+	width: 86%;
+	margin: 0 auto;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border-top: 1px solid #b3b3b3;
+	border-bottom: 1px solid #b3b3b3;
+	text-align: center;
+}
+
+th, td {
+	padding: 6px;
+	vertical-align: top;
+	white-space: nowrap;
+	font-size: 0.8rem;
+}
+
+th {
+	background-color: #f8f8f8;
+}
+
+#rt1 {
+	width: 10%;
+}
+
+#rt2 {
+	width: 55%;
+}
+
+#rt3 {
+	width: 15%;
+}
+
+#rt4 {
+	width: 20%;
+}
+
+#re-subject {
+	text-align: initial;
+}
+
+tr.content-body:nth-child(even) {
+	background-color: #f8f8f8;
+}
+
+tr.content-body:nth-child(odd) {
+	background-color: #fff;
+}
+
+tr.content-body:hover {
+	background-color: #ddd;
+	cursor: pointer;
+}
+
+
+/***** #community-review-insert ******/
+#community-insert {
+	width: 85%;
+	margin: 70px auto;
+}
+
+#community-insert h5 {
+	color: #34495e;
+	font-size: 1.5rem;
+	margin-left: 80px;
+}
+
+.memo-form {
+	margin: 0 auto;
+	width: 85%;
+	margin: 30px auto;
+}
+
+input, textarea {
+	display: inline-block;
+	width: 100%;
+	padding: 8px;
+	margin-bottom: 10px;
+}
+
+input {
+	display: inline-block;
+	width: 100%;
+	padding: 8px;
+	margin-bottom: 10px;
+}
+
+input:focus, textarea:focus {
+	border: 2px solid blue;
+	outline: none;
+}
+
+
+/***** #community-review-update ******/
+#community-update {
+	width: 85%;
+	margin: 70px auto;
+}
+
+#community-update h5 {
+	color: #34495e;
+	font-size: 1.5rem;
+	margin: 0 0 20px 80px;
+}
+
+#community-update table {
+	text-align: initial;
+}
+
+#re-sub {
+	font-size: 1.2rem;
+	padding: 20px 5px;
+}
+
+#re-text {
+	padding: 10px 5px 30px 5px;
+}
+
+#re-hide {
+	display: none;
+}
+
