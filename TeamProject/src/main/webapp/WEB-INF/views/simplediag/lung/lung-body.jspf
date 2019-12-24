@@ -28,12 +28,11 @@
 					<li>${exp.lung_e_expl }</li>
 					<br/>
 					</c:forEach>
-					<button class="btn btn-info btn-outline-info">
-					<a href="${rootPath }/simplediag/lung/alter?strSeq=${dto.lung_seq}">수정</a>
-					</button>
+					<a href="${rootPath }/simplediag/lung/alter?strSeq=${dto.lung_seq}"><button class="btn btn-info btn-outline-info">
+					수정</button></a>
 					<br/>
 					<br/>
-					<br/>
+					<hr/>
 				</article>
 					</ul>
 				</c:forEach>

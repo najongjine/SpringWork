@@ -10,12 +10,12 @@
 
 	<select id="findByName" resultType="BloodTestDTO">
 		select * from tbl_bloodtest
-		where upper(BLD_NAME) like '%' || upper(#{bld_name}) || '%'
+		where upper(BLD_NAME) like '%' || upper(#{bld_name,jdbcType=VARCHAR}) || '%'
 	</select>
 
 	<select id="findBySeq" resultType="BloodTestDTO">
 		select * from tbl_bloodtest
-		where BLD_SEQ = #{bld_seq}
+		where BLD_SEQ = #{bld_seq,jdbcType=VARCHAR}
 	</select>
 
 	<insert id="insert" parameterType="BloodTestDTO">
@@ -40,22 +40,22 @@
 
 	<update id="update" parameterType="BloodTestDTO">
 		update tbl_bloodtest set
-		BLD_NAME = #{bld_name},
-		BLD_NAME_KOR = #{bld_name_kor},
+		BLD_NAME = #{bld_name,jdbcType=VARCHAR},
+		BLD_NAME_KOR = #{bld_name_kor,jdbcType=VARCHAR},
 		BLD_NORMALMIN =
-		#{bld_normalmin},
+		#{bld_normalmin,jdbcType=VARCHAR},
 		BLD_NORMALMAX =
-		#{bld_normalmax},
+		#{bld_normalmax,jdbcType=VARCHAR},
 		BLD_OVERNORMAL =
-		#{bld_overnormal},
+		#{bld_overnormal,jdbcType=VARCHAR},
 		BLD_BELOWNORMAL =
-		#{bld_belownormal}
+		#{bld_belownormal,jdbcType=VARCHAR}
 		where BLD_SEQ =
-		#{bld_seq}
+		#{bld_seq,jdbcType=VARCHAR}
 	</update>
 
 	<delete id="delete" parameterType="BloodTestDTO">
 		delete from tbl_bloodtest
-		where BLD_SEQ= #{bld_seq}
+		where BLD_SEQ= #{bld_seq,jdbcType=VARCHAR}
 	</delete>
 </mapper> 

@@ -6,12 +6,11 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.biz.pet.domain.PageDTO;
+import com.biz.pet.domain.najongjinutil.JongPageDTO;
 import com.biz.pet.domain.simplediag.lung.LungDTO;
 import com.biz.pet.domain.simplediag.lung.LungExplDTO;
 import com.biz.pet.persistence.simplediag.lung.LungDao;
 import com.biz.pet.persistence.simplediag.lung.LungExplDao;
-import com.biz.pet.service.PageService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -34,10 +33,10 @@ public class LungService {
 	public void makeLungExplDao() {
 		leDao=SqlSession.getMapper(LungExplDao.class);
 	}
-	public PageDTO getPage(String cat, String search, long currentPageNo) {
+	public JongPageDTO getPage(String cat, String search, long currentPageNo) {
 		long totalCount=maxListSize;
 		if(totalCount>maxListSize) totalCount=maxListSize;
-		PageDTO pageDTO=pService.makePageNation(totalCount, currentPageNo);
+		JongPageDTO pageDTO=pService.makePageNation(totalCount, currentPageNo);
 		log.debug("전체갯수: "+totalCount);
 		
 		return pageDTO;

@@ -21,9 +21,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script> var rootPath="${pageContext.request.contextPath }"</script>
-<script src="${rootPath }/js/simplediag/lung/alter.js"></script>
+<script src="${rootPath }/js/simplediag/lung/alter.js?ver=1"></script>
 
-<link rel="stylesheet" type="text/css" href="${rootPath }/css/simplediag/lung/alter.css?ver=3">
+<link rel="stylesheet" type="text/css" href="${rootPath }/css/simplediag/lung/alter.css?ver=4">
 <link rel="stylesheet" type="text/css" href="${rootPath }/css/home.css?ver=2">
 <link rel="stylesheet" type="text/css" href="${rootPath }/css/info.css?ver=2">
 <link rel="stylesheet" type="text/css" href="${rootPath }/css/community.css?ver=2">

@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.biz.pet.domain.PageDTO;
+import com.biz.pet.domain.najongjinutil.JongPageDTO;
 import com.biz.pet.domain.simplediag.lung.LungDTO;
 import com.biz.pet.domain.simplediag.lung.LungExplDTO;
-import com.biz.pet.service.FileService;
+import com.biz.pet.service.najongjinUtil.JongFileService;
 import com.biz.pet.service.simplediag.lung.LungExplService;
 import com.biz.pet.service.simplediag.lung.LungService;
 
@@ -30,7 +30,7 @@ public class LungController {
 	@Autowired
 	LungExplService leService;
 	@Autowired
-	FileService fileService;
+	JongFileService fileService;
 
 	@RequestMapping(value = "/list")
 	public String lung(Model model,String cat, String search, @RequestParam(value = "currentPageNo", required = false,
@@ -38,7 +38,7 @@ public class LungController {
 		List<LungDTO> lungList=lungService.findAllList();
 		List<LungDTO> perPageList=new ArrayList<LungDTO>();
 		
-		PageDTO pageDTO=lungService.getPage(cat, search, currentPageNo);
+		JongPageDTO pageDTO=lungService.getPage(cat, search, currentPageNo);
 		//1*10.   1~10.    0~9
 		int endItem=(int) (pageDTO.getCurrentPageNo()*pageDTO.getListPerPage());
 		int startItem=(int) ((pageDTO.getCurrentPageNo()-1)*pageDTO.getListPerPage());
@@ -83,6 +83,9 @@ public class LungController {
 			String[] currentStrExpl,Model model , String[] newStrExpl,String lung_e_code,
 			String lung_e_name, @RequestParam(value="u_file", required = false) MultipartFile u_file) {
 		
+		for(String s:newStrExpl) {
+			log.debug("!!! nrwStr: "+s);
+		}
 		int ret=0;
 		if(!u_file.isEmpty()) {
 			//update 할때 이미 upload된 파일이 있으면 기존의 파일을 삭제하고 새로운 파일을 업로드 해야함으로
